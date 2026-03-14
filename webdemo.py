@@ -1,12 +1,17 @@
 import os
 import streamlit as st
-from config import OPENAI_API_KEY
+# from config import OPENAI_API_KEY
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_chroma import Chroma
 from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough
+
+try:
+    OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
+except:
+    from config import OPENAI_API_KEY
 
 st.set_page_config(page_title="CloudNova AI Assistant")
 st.title("CloudNova AI Web Assistant")

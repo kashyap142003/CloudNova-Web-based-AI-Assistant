@@ -16,7 +16,7 @@ user_input = st.text_input("Please feel free to ask your question here")
 llm = OpenAI(
     api_key=OPENAI_API_KEY,
     api_base="https://openrouter.ai/api/v1",
-    model="openai/gpt-4o-mini",
+    model="gpt-4o-mini",
     temperature=0
 )
 
@@ -24,7 +24,7 @@ llm = OpenAI(
 embed_model = OpenAIEmbedding(
     api_key=OPENAI_API_KEY,
     api_base="https://openrouter.ai/api/v1",
-    model="openai/text-embedding-3-small"
+    model="text-embedding-3-small"
 )
 
 # STEP 4: Set Global Settings
